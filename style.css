@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    /* Exemplo da Paleta 2 (Aconchego) */
+    --cor-primaria: #CC4420; /* Laranja da CTA */
+    --cor-secundaria: #4F3222; /* Laranja da CTA */
+    --cor-destaque: #FFB800; /* Laranja da CTA */
+    --cor-fundo: #F8F4EA; /* Fundo principal */
+    --cor-texto: #292929; /* Marrom escuro */
+    --cor-acento: #5A8D5A; /* Verde Oliva para frescor */
+}
+
+body {
+  width: 90%;
+  font-family: 'poppins';
+  margin: auto;
+  background-color: #F8F4EA;
+}
+
+.main-header {
+  padding: 1.5rem;
+}
+
+.container-bg {
+  background-image: url('img/pexels-jonathanborba-2983101.jpg');
+  background-size: cover;
+  /* Garante que a imagem cubra toda a área */
+  background-position: center;
+  /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  /* Impede que a imagem se repita */
+  min-height: 90vh;
+  display: grid;
+  align-items: center;
+  margin: 0;
+  border-radius: 28px;
+}
+
+.main-header a {
+  text-decoration: none;
+}
+
+.navbar,
+.itens {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.itens li {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 .8rem 0;
+}
+
+.navbar a {
+  color: #9a5a3f;
+  transition: 0.2s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.hero-section {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section a {
+  margin-top: 20px;
+  color: #9a5a3f;
+  width: 150px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  background-color: aliceblue;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.hero-section a:hover {
+  transform: scale(1.05);
+}
+
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-items: center
+}
+
+.card-food {
+  color: #9a5a3f;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  width: 250px;
+  text-align: center;
+  justify-items: center;
+  margin: 0;
+}
+
+.card-food img {
+  height: 100px;
+  max-width: 150px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: end;
+  width: 100%;
+  margin-top: auto;
+  padding-bottom: 10px;
+  gap: 5px;
+}
+
+.adicionar-btn {
+  background-color: #9a5a3f;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.adicionar-btn:hover {
+  background-color: #b1664b;
+}
+
+.cta-banner {
+  margin: 5rem 0;
+  display: grid;
+  align-self: flex-start;
+  justify-content: center;
+    justify-items: center;
+}
+
+.cta-banner h2{
+  font-size: 2rem;
+  color: var(--cor-secundaria);
+}
+
+.cta-banner a{
+  text-decoration: none;
+  color: var(--cor-primaria);
+}
+
+.cta-banner a:hover{
+  text-decoration: underline ;
+}
+
+.qualidade-historia {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px 35px;
+  max-height: 650px;
+}
+
+.item-img {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+}
+
+.item-img img {
+  max-width: 100%;
+  border-radius: 28px;
+}
+
+.text-main {
+  grid-column: span 2 / span 2;
+  grid-column-start: 3;
+  background-image: linear-gradient(
+        to bottom right, /* Direção do gradiente: do top-left para o bottom-right */
+        #FFD260 0%,     /* Amarelo Cuscuz Claro (início, mais luminoso) */
+        #FFB800 50%,    /* Amarelo Cuscuz Original (meio-tom) */
+        #E58A00 100%    /* Laranja Queimado (fim, mais escuro) */
+    );
+  color: var(--cor-fundo);
+  border-radius: 28px;
+  padding: 20px;
+}
+
+
+.text-main p{
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.text-main h3{
+  font-size: 2rem;
+  color: var(--cor-fundo);
+}
+
+.info-block {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 2;
+    background-image: linear-gradient(
+        to bottom right, /* Direção do gradiente: do top-left para o bottom-right */
+        #18a789 0%,     /* Amarelo Cuscuz Claro (início, mais luminoso) */
+        #25c984 50%,    /* Amarelo Cuscuz Original (meio-tom) */
+        #39bd72 100%    /* Laranja Queimado (fim, mais escuro) */
+    );
+  color:var(--cor-fundo);
+  border-radius: 28px;
+  padding: 20px;
+  max-height: 348px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-block h4{
+  font-size: 1.2rem;
+}
+
+.info-block li{
+  list-style-type: none;
+  font-size: 1rem;
+}
+
+.complemento {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 2;
+  background-image: linear-gradient(
+        to bottom right, /* Direção do gradiente: do top-left para o bottom-right */
+        #442819 0%,     /* Amarelo Cuscuz Claro (início, mais luminoso) */
+        #634230 50%,    /* Amarelo Cuscuz Original (meio-tom) */
+        #684b3d 100%    /* Laranja Queimado (fim, mais escuro) */
+    );
+  color:var(--cor-fundo);
+  border-radius: 28px;
+  padding: 20px;
+  height: 40%;
+}
+
+.complemento a{
+  text-decoration: none;
+  color: var(--cor-destaque);
+}

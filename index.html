@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurante</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="navbar">
+        <a href="#" class="logo">Meu Restaurante</a>
+        <ul class="itens">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#cardapio-card">Menu</a></li>
+          <li><a href="#">Contatos</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+        <a href="#" class="carrinho">Carrinho</a>
+      </nav>
+    </header>
+
+    <div class="container-bg">
+      <section id="home" class="hero-section container">
+        <h1>Sabores que Surpreendem</h1>
+        <p>Experimente os pratos mais deliciosos da cidade.</p>
+        <a href="#cardapio-card" class="cta-button">Ver Cardápio</a>
+      </section>
+    </div>
+    <main>
+      <section id="engagement-section">
+        <div class="container">
+          <div class="cta-banner">
+            <h2>Nossa Culinária: Feita com Paixão e Tradição</h2>
+            <a href="#menu-section" class="btn btn-primary"
+              >VER CARDÁPIO COMPLETO</a
+            >
+          </div>
+
+          <div class="qualidade-historia">
+            <div class="item-img">
+              <img
+                src="img/pexels-polina-kovaleva-5645034.jpg"
+                alt="Foto dos ingredientes frescos do restaurante"
+                class="imagem-qualidade"
+              />
+              <div class="chef-quote-box">
+                <p>
+                  "Cozinhar não é apenas alimentar; é um ato de amor e respeito
+                  à herança que nos foi passada."
+                </p>
+                <p class="autor-citação">- Chef Felipe Freires</p>
+              </div>
+            </div>
+            <div class="text-main">
+              <h3>Nossa História: A Alma da Culinária Nordestina</h3>
+              <p>
+                Mais do que um restaurante, somos a concretização de um sonho
+                familiar que começou em 1971. Cada receita carrega
+                a memória do povo nordestino, usando técnicas
+                tradicionais para trazer à sua mesa um sabor
+                inesquecível e autêntico.
+              </p>
+            </div>
+            <div class="info-block">
+              <h4>Por que nos escolher?</h4>
+              <ul class="diferenciais-list">
+                <li>
+                  <i class="icone icone-frescor"></i>
+                  <strong>Frescor Garantido:</strong> Ingredientes selecionados
+                  diariamente no quintal de casa.
+                </li>
+                <li>
+                  <i class="icone icone-chef"></i>
+                  <strong>Tempero Arretado:</strong> Usamos apenas a legítima manteiga de garrafa e especiarias da feira.
+                </li>
+                <li>
+                  <i class="icone icone-vinho"></i>
+                  <strong>Ingredientes da Roça:</strong> Carne de Sol, Macaxeira e Cuscuz feitos na hora.
+                </li>
+                <li>
+                  <i class="icone icone-ambiente"></i>
+                  <strong>Ambiente Aconchegante:</strong> Restaurante no meio do ambiente nordestino
+                </li>
+              </ul>
+            </div>
+            <div class="complemento">
+              <h4>Experiência Completa</h4>
+              <p>
+                Venha viver a nossa história! Temos opções para almoço executivo
+                e jantares exclusivos. Garanta sua mesa antes que esgote.
+              </p>
+              <a href="link-para-reservas" class="btn btn-secondary"
+                >RESERVAR MINHA MESA</a
+              >
+            </div>
+          </div>
+
+          <div class="galeria-destaque">
+            <h3>Nossos Clássicos (Imagens Irresistíveis)</h3>
+            <div class="galeria-fotos">
+              <img
+                src="caminho-para-prato-1.jpg"
+                alt="Nome do Prato 1"
+                class="prato-foto"
+              />
+              <img
+                src="caminho-para-prato-2.jpg"
+                alt="Nome do Prato 2"
+                class="prato-foto"
+              />
+              <img
+                src="caminho-para-prato-3.jpg"
+                alt="Nome do Prato 3"
+                class="prato-foto"
+              />
+              <img
+                src="caminho-para-prato-4.jpg"
+                alt="Nome do Prato 4"
+                class="prato-foto"
+              />
+            </div>
+          </div>
+
+          <div class="depoimentos-container">
+            <h3>O que nossos clientes dizem</h3>
+
+            <div class="depoimento-card">
+              <span class="estrelas">★★★★★</span>
+              <p>
+                "O melhor [Tipo de comida] da cidade! O atendimento é impecável
+                e o [Prato Específico] é de outro mundo. Recomendo de olhos
+                fechados!"
+              </p>
+              <p class="autor">- Maria F., Cliente Satisfeita</p>
+            </div>
+
+            <div class="depoimento-card">
+              <span class="estrelas">★★★★★</span>
+              <p>
+                "O ambiente é lindo e a comida super fresca. Ótimo lugar para um
+                jantar especial. Voltarei em breve!"
+              </p>
+              <p class="autor">- João C., Avaliação Google</p>
+            </div>
+
+            <a href="link-para-pagina-de-avaliacoes" class="btn btn-link"
+              >Veja mais avaliações</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="cardapio-card" class="cardapio-grid">
+        <div id="card-produtos" class="card-food">
+          <img
+            class="item-1"
+            src="img/a-cheesy-delicious-pizza-with-tasty-pepperoni-on-a-transparent-background-.png"
+            alt="pizza"
+          />
+          <h3 class="item-2">Pizza</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 48.00</p>
+            <button class="adicionar-btn" data-id="1">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div id="card-produtos" class="card-food">
+          <img
+            class="item-1"
+            src="img/pngtree-hamburger-png-image_13094305.png"
+            alt="hamburger"
+          />
+          <h3 class="item-2">Hamburger</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 35.00</p>
+            <button class="adicionar-btn" data-id="2">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div id="card-produtos" class="card-food">
+          <img
+            class="item-1"
+            src="img/pngtree-lasagna-recipes-for-family-dinners-png-image_12634685.png"
+            alt="lasanha"
+          />
+          <h3 class="item-2">Lasanha</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 25.00</p>
+            <button class="adicionar-btn" data-id="3">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div id="card-produtos" class="card-food">
+          <img class="item-1" src="img/slider-coxinha.png" alt="Coxinha" />
+          <h3 class="item-2">Coxinha de frango</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 5.00</p>
+            <button class="adicionar-btn" data-id="4">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div id="card-produtos" class="card-food">
+          <img
+            class="item-1"
+            src="img/pngtree-smoked-beef-brisket-neatly-cut-on-wood-platter-png-image_14822615.png"
+            alt="Picanha"
+          />
+          <h3 class="item-2">Picanha</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 50.00</p>
+            <button class="adicionar-btn" data-id="5">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div id="card-produtos" class="card-food">
+          <img
+            class="item-1"
+            src="img/pngtree-fried-shrimp-served-on-a-plate-png-image_13678310.png"
+            alt="Camarão"
+          />
+          <h3 class="item-2">Camarão</h3>
+          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-footer item-3">
+            <p class="preco">R$ 25.00</p>
+            <button class="adicionar-btn" data-id="6">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="carrinho">
+      <div class="container-carrinho" id="carrinho-container">
+        <h1>Seu carrinho</h1>
+        <ul id="carrinho-lista"></ul>
+        <h3 id="carrinho-total">Total: R$ 0.00</h3>
+        <button id="finalizar-compra-btn">Finalizar Compra</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
