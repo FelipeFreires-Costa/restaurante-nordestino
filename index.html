@@ -9,14 +9,18 @@
   <body>
     <header class="main-header">
       <nav class="navbar">
-        <a href="#" class="logo">Meu Restaurante</a>
+        <a href="#" class="logo">
+          <img src="img/logoipsum-custom-logo.svg" alt="" />
+        </a>
         <ul class="itens">
           <li><a href="#home">Home</a></li>
           <li><a href="#cardapio-card">Menu</a></li>
           <li><a href="#">Contatos</a></li>
           <li><a href="#">Sobre</a></li>
         </ul>
-        <a href="#" class="carrinho">Carrinho</a>
+        <a href="#" class="carrinho">
+          <img src="img/shop-svgrepo-com.svg" alt="carrinho" />
+        </a>
       </nav>
     </header>
 
@@ -26,6 +30,12 @@
         <p>Experimente os pratos mais deliciosos da cidade.</p>
         <a href="#cardapio-card" class="cta-button">Ver Cardápio</a>
       </section>
+      <div class="card-bg">
+        <p>
+          - A culinária nordestina é rica e diversificada, refletindo a mistura
+          das culturas indígena, africana e portuguesa.
+        </p>
+      </div>
     </div>
     <main>
       <section id="engagement-section">
@@ -44,22 +54,14 @@
                 alt="Foto dos ingredientes frescos do restaurante"
                 class="imagem-qualidade"
               />
-              <div class="chef-quote-box">
-                <p>
-                  "Cozinhar não é apenas alimentar; é um ato de amor e respeito
-                  à herança que nos foi passada."
-                </p>
-                <p class="autor-citação">- Chef Felipe Freires</p>
-              </div>
             </div>
             <div class="text-main">
-              <h3>Nossa História: A Alma da Culinária Nordestina</h3>
+              <h3>A Alma da Culinária Nordestina</h3>
               <p>
                 Mais do que um restaurante, somos a concretização de um sonho
-                familiar que começou em 1971. Cada receita carrega
-                a memória do povo nordestino, usando técnicas
-                tradicionais para trazer à sua mesa um sabor
-                inesquecível e autêntico.
+                familiar que começou em 1971. Cada receita carrega a memória do
+                povo nordestino, usando técnicas tradicionais para trazer à sua
+                mesa um sabor inesquecível e autêntico.
               </p>
             </div>
             <div class="info-block">
@@ -67,20 +69,18 @@
               <ul class="diferenciais-list">
                 <li>
                   <i class="icone icone-frescor"></i>
-                  <strong>Frescor Garantido:</strong> Ingredientes selecionados
-                  diariamente no quintal de casa.
+                  <strong>❄️Frescor Garantido:</strong> Ingredientes
+                  selecionados diariamente no quintal de casa.
                 </li>
                 <li>
                   <i class="icone icone-chef"></i>
-                  <strong>Tempero Arretado:</strong> Usamos apenas a legítima manteiga de garrafa e especiarias da feira.
+                  <strong>🧑‍🍳Tempero Arretado:</strong> Usamos apenas a legítima
+                  manteiga de garrafa e especiarias da feira.
                 </li>
                 <li>
                   <i class="icone icone-vinho"></i>
-                  <strong>Ingredientes da Roça:</strong> Carne de Sol, Macaxeira e Cuscuz feitos na hora.
-                </li>
-                <li>
-                  <i class="icone icone-ambiente"></i>
-                  <strong>Ambiente Aconchegante:</strong> Restaurante no meio do ambiente nordestino
+                  <strong>🍷Ingredientes da Roça:</strong> Carne de Sol,
+                  Macaxeira e Cuscuz feitos na hora.
                 </li>
               </ul>
             </div>
@@ -90,35 +90,11 @@
                 Venha viver a nossa história! Temos opções para almoço executivo
                 e jantares exclusivos. Garanta sua mesa antes que esgote.
               </p>
+            </div>
+            <div class="botao">
               <a href="link-para-reservas" class="btn btn-secondary"
                 >RESERVAR MINHA MESA</a
               >
-            </div>
-          </div>
-
-          <div class="galeria-destaque">
-            <h3>Nossos Clássicos (Imagens Irresistíveis)</h3>
-            <div class="galeria-fotos">
-              <img
-                src="caminho-para-prato-1.jpg"
-                alt="Nome do Prato 1"
-                class="prato-foto"
-              />
-              <img
-                src="caminho-para-prato-2.jpg"
-                alt="Nome do Prato 2"
-                class="prato-foto"
-              />
-              <img
-                src="caminho-para-prato-3.jpg"
-                alt="Nome do Prato 3"
-                class="prato-foto"
-              />
-              <img
-                src="caminho-para-prato-4.jpg"
-                alt="Nome do Prato 4"
-                class="prato-foto"
-              />
             </div>
           </div>
 
@@ -150,7 +126,30 @@
           </div>
         </div>
       </section>
+      <div class="galeria-destaque">
+        <h3>Nossos Clássicos</h3>
+        <div class="galeria-fotos">
+          <div class="gallery-item">
+            <img src="img/comida1.jpg" alt="Nome do Prato 1" />
+            <span class="img-label">Sarrabulho</span>
+          </div>
 
+          <div class="gallery-item">
+            <img src="img/comida2.jpg" alt="Nome do Prato 2" />
+            <span class="img-label">Macaxeira frita</span>
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/comida3.jpg" alt="Nome do Prato 3" />
+            <span class="img-label">Tapioca</span>
+          </div>
+
+          <div class="gallery-item">
+            <img src="img/comida4.jpeg" alt="Nome do Prato 4" />
+            <span class="img-label">Cuscuz</span>
+          </div>
+        </div>
+      </div>
       <section id="cardapio-card" class="cardapio-grid">
         <div id="card-produtos" class="card-food">
           <img
