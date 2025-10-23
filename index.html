@@ -97,68 +97,84 @@
               >
             </div>
           </div>
+        </div>
+      </section>
+      <h3>Nossos Clássicos</h3>
+      <section class="destaques-section">
+        <div class="galeria-destaque">
+          <div class="galeria-fotos">
+            <div class="gallery-item">
+              <img src="img/comida1.jpg" alt="Nome do Prato 1" />
+              <span class="img-label">Sarrabulho</span>
+            </div>
 
+            <div class="gallery-item">
+              <img src="img/comida2.jpg" alt="Nome do Prato 2" />
+              <span class="img-label">Macaxeira frita</span>
+            </div>
+
+            <div class="gallery-item">
+              <img src="img/comida3.jpg" alt="Nome do Prato 3" />
+              <span class="img-label">Tapioca</span>
+            </div>
+
+            <div class="gallery-item">
+              <img src="img/comida4.jpeg" alt="Nome do Prato 4" />
+              <span class="img-label">Cuscuz</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="title-depoimento">O que nossos clientes dizem</h3>
           <div class="depoimentos-container">
-            <h3>O que nossos clientes dizem</h3>
-
             <div class="depoimento-card">
+              <div class="autor-row">
+              <img src="img/quote.svg" alt="Ícone de aspas" class="icone-aspas" />
+              <p class="autor">- Maria F., Cliente Satisfeita</p>
+              </div>
+
               <span class="estrelas">★★★★★</span>
               <p>
-                "O melhor [Tipo de comida] da cidade! O atendimento é impecável
-                e o [Prato Específico] é de outro mundo. Recomendo de olhos
+                "O melhor comida nordestina da cidade! O atendimento é impecável
+                e o cuscuz é de outro mundo. Recomendo de olhos
                 fechados!"
               </p>
-              <p class="autor">- Maria F., Cliente Satisfeita</p>
             </div>
 
             <div class="depoimento-card">
+              <div class="autor-row">
+              <img src="img/quote.svg" alt="Ícone de aspas" class="icone-aspas" />
+              <p class="autor">- João C., Avaliação Google</p>
+              </div>
+
               <span class="estrelas">★★★★★</span>
               <p>
                 "O ambiente é lindo e a comida super fresca. Ótimo lugar para um
                 jantar especial. Voltarei em breve!"
               </p>
-              <p class="autor">- João C., Avaliação Google</p>
             </div>
-
-            <a href="link-para-pagina-de-avaliacoes" class="btn btn-link"
-              >Veja mais avaliações</a
-            >
           </div>
+          <div class="btn-link-container">
+            <a href="link-para-pagina-de-avaliacoes" class="depoimento btn-link"
+            >Veja mais avaliações</a
+          >
+          </div>
+          
         </div>
       </section>
-      <div class="galeria-destaque">
-        <h3>Nossos Clássicos</h3>
-        <div class="galeria-fotos">
-          <div class="gallery-item">
-            <img src="img/comida1.jpg" alt="Nome do Prato 1" />
-            <span class="img-label">Sarrabulho</span>
-          </div>
 
-          <div class="gallery-item">
-            <img src="img/comida2.jpg" alt="Nome do Prato 2" />
-            <span class="img-label">Macaxeira frita</span>
-          </div>
-
-          <div class="gallery-item">
-            <img src="img/comida3.jpg" alt="Nome do Prato 3" />
-            <span class="img-label">Tapioca</span>
-          </div>
-
-          <div class="gallery-item">
-            <img src="img/comida4.jpeg" alt="Nome do Prato 4" />
-            <span class="img-label">Cuscuz</span>
-          </div>
-        </div>
-      </div>
+      <section class="menu-section">
+        <h1>Nosso Cardápio</h1>
+        <img src="img/garfoefaca.svg" />
+      </section>
       <section id="cardapio-card" class="cardapio-grid">
         <div id="card-produtos" class="card-food">
-          <img
-            class="item-1"
-            src="img/a-cheesy-delicious-pizza-with-tasty-pepperoni-on-a-transparent-background-.png"
-            alt="pizza"
-          />
-          <h3 class="item-2">Pizza</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-imagem">
+            <img class="item-1" src="img/baiao.jpg" alt="baiao de dois" />
+          </div>
+          <h3 class="item-2">Baião de Dois</h3>
+          <p class="item-4">Arroz cremoso com queijo.</p>
           <div class="card-footer item-3">
             <p class="preco">R$ 48.00</p>
             <button class="adicionar-btn" data-id="1">
@@ -167,13 +183,11 @@
           </div>
         </div>
         <div id="card-produtos" class="card-food">
-          <img
-            class="item-1"
-            src="img/pngtree-hamburger-png-image_13094305.png"
-            alt="hamburger"
-          />
-          <h3 class="item-2">Hamburger</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-imagem">
+            <img class="item-1" src="img/carneDeSol.jpg" alt="Carne de Sol" />
+          </div>
+          <h3 class="item-2">Carne de Sol</h3>
+          <p class="item-4">Carne, macaxeira, manteiga.</p>
           <div class="card-footer item-3">
             <p class="preco">R$ 35.00</p>
             <button class="adicionar-btn" data-id="2">
@@ -182,13 +196,11 @@
           </div>
         </div>
         <div id="card-produtos" class="card-food">
-          <img
-            class="item-1"
-            src="img/pngtree-lasagna-recipes-for-family-dinners-png-image_12634685.png"
-            alt="lasanha"
-          />
-          <h3 class="item-2">Lasanha</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-imagem">
+            <img class="item-1" src="img/acaraje.jpg" alt="Acarajé" />
+          </div>
+          <h3 class="item-2">Acarajé</h3>
+          <p class="item-4">Bolinho de dendê recheado.</p>
           <div class="card-footer item-3">
             <p class="preco">R$ 25.00</p>
             <button class="adicionar-btn" data-id="3">
@@ -197,24 +209,28 @@
           </div>
         </div>
         <div id="card-produtos" class="card-food">
-          <img class="item-1" src="img/slider-coxinha.png" alt="Coxinha" />
-          <h3 class="item-2">Coxinha de frango</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-imagem">
+            <img
+              class="item-1"
+              src="img/receita-de-vatapa.jpg"
+              alt="Vatapá Cremoso"
+            />
+          </div>
+          <h3 class="item-2">Vatapá Cremoso</h3>
+          <p class="item-4">Creme denso de dendê.</p>
           <div class="card-footer item-3">
-            <p class="preco">R$ 5.00</p>
+            <p class="preco">R$ 35.00</p>
             <button class="adicionar-btn" data-id="4">
               Adicionar ao Carrinho
             </button>
           </div>
         </div>
         <div id="card-produtos" class="card-food">
-          <img
-            class="item-1"
-            src="img/pngtree-smoked-beef-brisket-neatly-cut-on-wood-platter-png-image_14822615.png"
-            alt="Picanha"
-          />
-          <h3 class="item-2">Picanha</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <div class="card-imagem">
+            <img class="item-1" src="img/cuscuz.jpeg" alt="Cuscuz Nordestino" />
+          </div>
+          <h3 class="item-2">Cuscuz Nordestino</h3>
+          <p class="item-4">Fofo, com queijo coalho.</p>
           <div class="card-footer item-3">
             <p class="preco">R$ 50.00</p>
             <button class="adicionar-btn" data-id="5">
@@ -223,13 +239,12 @@
           </div>
         </div>
         <div id="card-produtos" class="card-food">
-          <img
-            class="item-1"
-            src="img/pngtree-fried-shrimp-served-on-a-plate-png-image_13678310.png"
-            alt="Camarão"
-          />
+          <div class="card-imagem">
+            <img class="item-1" src="img/camarao.jpg" alt="Camarão" />
+          </div>
+
           <h3 class="item-2">Camarão</h3>
-          <p class="item-4">Lorem ipsum dolor sit amet</p>
+          <p class="item-4">Sabor do mar nordestino.</p>
           <div class="card-footer item-3">
             <p class="preco">R$ 25.00</p>
             <button class="adicionar-btn" data-id="6">
@@ -249,6 +264,76 @@
       </div>
     </section>
 
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo"><img src="img/logoipsum-custom-logo.svg" alt="Logotipo"></a>
+          <p class="brand-desc">
+            Sabores autênticos e atendimento acolhedor. Receitas regionais preparadas com ingredientes selecionados.
+          </p>
+          <div class="social">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <!-- simples ícone SVG -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M15 3h3v4h-3v14h-5V7H8V3h3V1.8C11 0.8 11.6 0 13.8 0H15v3z" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="WhatsApp" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M20 13.5a6.5 6.5 0 10-1.6 4.1L21 21l-3.4-0.9A6.5 6.5 0 0020 13.5z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cardapio-card">Cardápio</a></li>
+            <li><a href="#engagement-section">Qualidade</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <address class="footer-contact">
+            <div>Rua Exemplo, 123 — Centro</div>
+            <div><a href="tel:+5511999999999">+55 (11) 99999-9999</a></div>
+            <div><a href="mailto:contato@restaurante.com">contato@restaurante.com</a></div>
+          </address>
+          <h4 class="mt">Horário</h4>
+          <div class="hours">Ter–Dom: 11:00 — 22:00</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p class="news-text">Receba ofertas e novidades direto no seu e‑mail.</p>
+          <form class="newsletter-form" aria-label="Inscrever newsletter">
+            <input type="email" name="email" placeholder="Seu e‑mail" required />
+            <button type="submit">Inscrever</button>
+          </form>
+          <small class="privacy">Nunca compartilhamos seu e‑mail.</small>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Restaurante — Todos os direitos reservados.</p>
+        <nav class="bottom-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </nav>
+      </div>
+    </footer>
+    
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,11 +1,11 @@
 
 
 let cardapio = [
-  { id: 1, nome: 'Pizza', preco: 48.00, quantidade: 15 },
-  { id: 2, nome: 'Hamburguer', preco: 35.00, quantidade: 10 },
-  { id: 3, nome: 'Lasanha', preco: 25.00, quantidade: 3 },
-  { id: 4, nome: 'Coxinha de frango', preco: 5.00, quantidade: 7 },
-  { id: 5, nome: 'Picanha', preco: 50.00, quantidade: 5 },
+  { id: 1, nome: 'Baião de Dois', preco: 48.00, quantidade: 15 },
+  { id: 2, nome: 'Carne de Sol', preco: 35.00, quantidade: 10 },
+  { id: 3, nome: 'Acarajé', preco: 25.00, quantidade: 3 },
+  { id: 4, nome: 'Vatapá Cremoso', preco: 35.00, quantidade: 7 },
+  { id: 5, nome: 'Cuscuz Nordestino', preco: 50.00, quantidade: 5 },
   { id: 6, nome: 'Camarão', preco: 25.00, quantidade: 23 }
 ]
 
