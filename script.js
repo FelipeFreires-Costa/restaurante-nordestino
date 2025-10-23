@@ -130,3 +130,29 @@ botaoAdicionar.forEach(botao => {
     adicionarAoCarrinho(idDoProduto)
   })
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+  const btnVoltarAoTopo = document.getElementById('btnVoltarAoTopo')
+
+  //define a altura do gatinho em 500px
+  const gatinhoAltura = 500
+  
+  window.onscroll = function(){
+    controlarVisibilidade()
+  }
+
+  function controlarVisibilidade(){
+    if(document.body.scrollTop > gatinhoAltura || document.documentElement.scrollTop > gatinhoAltura){
+      btnVoltarAoTopo.classList.add('visivel')
+    }else{
+      btnVoltarAoTopo.classList.remove('visivel')
+    }
+  }
+
+  btnVoltarAoTopo.addEventListener("click", function(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  })
+})

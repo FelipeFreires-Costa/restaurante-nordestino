@@ -42,7 +42,7 @@ body {
   /* Centraliza a imagem */
   background-repeat: no-repeat;
   /* Impede que a imagem se repita */
-  min-height: 90vh;
+  min-height: 80vh;
   display: grid;
   align-items: center;
   margin: 0;
@@ -476,33 +476,6 @@ body {
   color: var(--cor-destaque);
 }
 
-@media (max-width: 900px) {
-  .qualidade-historia {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 18px;
-  }
-
-  .item-img {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  .text-main {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  .info-block {
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
-
-  .complemento {
-    grid-column: 1 / -1;
-    grid-row: 4;
-  }
-}
 
 .galeria-fotos {
   display: grid;
@@ -557,55 +530,13 @@ body {
 .galeria-destaque h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-}
-
-@media (max-width: 900px) {
-  .qualidade-historia {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 18px;
-    padding: 0 12px;
   }
-
-  .item-img {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    padding: 0;
-  }
-
-  .item-img .imagem-qualidade,
-  .item-img img {
-    width: 90%;
-    max-width: 520px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 20px;
-  }
-
-  .text-main,
-  .info-block,
-  .complemento {
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .info-block {
-    max-width: 640px;
-  }
-
-  .complemento {
-    max-width: 640px;
-  }
-}
 
 .site-footer {
-  background: linear-gradient(180deg, var(--cor-secundaria) 0%, #3f2b20 100%);
+  background: linear-gradient(180deg, var(--cor-acento) 0%, #2a5036 100%);
   color: #FFF7F0;
   padding: 48px 0 20px;
-  margin-top: 3rem;
-  border-radius: 12px;
+  margin: 3rem 0 2rem 0;    border-radius: 16px;
 }
 
 .site-footer .footer-grid {
@@ -614,6 +545,7 @@ body {
   gap: 28px;
   align-items: start;
   max-width: 1200px;
+  justify-items: center;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -641,6 +573,11 @@ body {
   display: flex;
   gap: 10px;
   margin-top: 8px;
+}
+
+.social img {
+  width: 20px;
+  height: 20px;
 }
 
 .social-link {
@@ -747,46 +684,542 @@ body {
   color: var(--cor-destaque);
 }
 
-/* responsive */
-@media (max-width: 900px) {
-  .site-footer {
-    padding: 36px 0 18px;
-  }
-
-  .site-footer .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 0 14px;
-  }
-
-  .footer-brand .brand-desc {
-    max-width: 100%;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-form input[type="email"] {
-    width: 100%;
-  }
-
-  .newsletter-form button {
-    width: 100%;
-  }
-}
-
 /* pequena melhoria de acessibilidade: foco claro */
 .site-footer a:focus,
 .site-footer button:focus,
 .newsletter-form input:focus {
   outline: 3px solid rgba(255, 184, 0, 0.15);
   outline-offset: 2px;
+}
+
+#btnVoltarAoTopo {
+  /* Posicionamento */
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000; /* Garante que fique acima de tudo */
+
+  /* Estilo (usando suas variáveis de cor) */
+  background-color: var(--cor-primaria, #CC4420);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%; /* Botão circular */
+  width: 50px;
+  height: 50px;
+  
+  /* Ícone centralizado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* A Mágica da Aparição (invisível por padrão) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* Efeito sutil de subida */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#btnVoltarAoTopo:hover {
+  background-color: var(--cor-secundaria, #4F3222);
+  transform: translateY(-2px); /* Efeito sutil no hover */
+}
+
+/* Classe que o JavaScript vai adicionar */
+#btnVoltarAoTopo.visivel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- Breakpoint 1: Tablets Maiores e Laptops Pequenos (<= 992px) --- */
+@media (max-width: 992px) {
+  
+  /* Ajusta o grid do cardápio para 2 colunas */
+  .cardapio-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 0;
+  }
+
+  /* O grid de "Qualidade e História" é complexo. 
+     Vamos empilhá-lo mais cedo para evitar quebras. */
+  .qualidade-historia {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    /* Reseta as linhas */
+    gap: 20px;
+  }
+
+  /* Reseta todos os itens do grid para ocupar 100% da largura */
+  .item-img,
+  .text-main,
+  .info-block,
+  .complemento {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    /* Reseta posições específicas de linha/coluna */
+  }
+
+  /* Ajusta o grid do footer para 2 colunas */
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    gap: 30px;
+  }
+
+  /* Faz a coluna da marca ocupar a largura total */
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* Empilha a seção de destaques */
+  .destaques-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* --- Breakpoint 2: Tablets (<= 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Aumenta a largura do body para melhor aproveitar a tela */
+  body {
+    width: 95%;
+  }
+
+  /* Empilha o menu de navegação */
+  .navbar {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .itens {
+    flex-direction: column;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+
+  /* Centraliza o card flutuante e o torna seguro */
+  .card-bg {
+    position: absolute;
+    /* Mantém absoluto, mas centraliza */
+    width: 95%;
+    max-width: 400px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    /* Remove a posição 'right' fixa */
+    backdrop-filter: blur(8px) saturate(180%);
+    /* Aumenta o blur para legibilidade */
+  }
+
+  /* Reduz o tamanho da fonte principal do Hero */
+  .hero-section h1 {
+    font-size: 2.8rem;
+    /* Reduzido de 3.4rem */
+  }
+
+  /* Ajusta a galeria de fotos para 1 coluna */
+  .galeria-fotos {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  /* Garante que o item da galeria ocupe a largura */
+  .gallery-item {
+    width: 100%;
+    max-width: 400px;
+    /* Limita para não ficar gigante */
+    padding-top: 56.25%;
+    /* Força proporção 16:9 */
+    height: auto;
+    /* Remove altura fixa */
+  }
+
+  /* Empilha a barra inferior do footer */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+/* --- Breakpoint 3: Celulares (<= 576px) --- */
+@media (max-width: 576px) {
+
+  body {
+    width: 95%;
+    /* Correto: aproveita melhor a tela */
+  }
+
+  /* --- Header e Hero --- */
+  .main-header {
+    padding: 1rem 0.5rem;
+  }
+
+  /* * Mantém o menu empilhado que definimos no breakpoint anterior (768px).
+   * O grid de 4 colunas é muito apertado para 360px.
+   */
+  .itens {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .container-bg {
+    min-height: 60vh;
+    /* Bom: reduz a altura do hero */
+  }
+
+  .card-bg {
+    width: 90%;
+    /* Mais seguro que 80% */
+    padding: 12px;
+    font-size: 0.9rem;
+    /* Posição segura e robusta, sem números mágicos */
+    bottom: 20px;
+    /* Remove a posição 'right' e centraliza como fizemos antes */
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  .hero-section h1 {
+    font-size: 2.1rem;
+    /* Correto */
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    /* Correto */
+  }
+
+  /* --- Seções de Conteúdo --- */
+  .menu-section h1 {
+    font-size: 2.2rem;
+    color: var(--cor-secundaria);
+  }
+
+  /* * CORREÇÃO CRÍTICA:
+   * Nunca use larguras fixas (400px) maiores que o viewport (360px).
+   * Usamos 1fr ou 100% para ocupar o espaço disponível.
+   */
+  .destaques-section {
+    grid-template-columns: 1fr;
+    /* Correção: 400px -> 1fr */
+    justify-content: center;
+  }
+
+  .qualidade-historia {
+    /* Herda o 'grid-template-columns: 1fr' do breakpoint de 992px */
+    /* Apenas removemos a altura e largura fixas */
+    max-width: 100%;
+    height: auto;
+    /* Correção: 107vh -> auto */
+    gap: 20px;
+  }
+
+  /* Reseta o posicionamento do botão, já que o grid-pai mudou */
+  .botao {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+  }
+
+  .text-main h3 {
+    font-size: 1.3rem;
+  }
+
+  .text-main p {
+    font-size: 1rem;
+  }
+
+  /* --- Cardápio (Seu código aqui estava ótimo) --- */
+  .cardapio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-food {
+    width: 100%;
+    max-width: 300px;
+    /* Limite máximo é perfeito */
+    max-height: 400px;
+    margin: 0 auto;
+  }
+
+  .card-imagem {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-food img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .depoimento-card {
+    height: auto;
+    /* Correto */
+  }
+
+  /* --- Banner CTA --- */
+  .cta-banner {
+    margin: 3rem 0;
+  }
+
+  .cta-banner h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* --- Footer (Seu código estava quase todo bom) --- */
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-col.footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+
+  .footer-col.newsletter {
+    grid-column: 1 / -1;
+  }
+
+  /* Refinamento: Empilhar os links para leitura mais fácil */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    /* Correção: row -> column */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    margin-bottom: 0;
+    color: var(--cor-destaque);
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .footer-bottom .bottom-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+
+  body {
+    width: 95%;
+    /* Correto: aproveita melhor a tela */
+  }
+
+  /* --- Header e Hero --- */
+  .main-header {
+    padding: 1rem 0.5rem;
+  }
+
+  /* * Mantém o menu empilhado que definimos no breakpoint anterior (768px).
+   * O grid de 4 colunas é muito apertado para 360px.
+   */
+  .itens {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .container-bg {
+    min-height: 60vh;
+    /* Bom: reduz a altura do hero */
+  }
+
+  .card-bg {
+    width: 90%;
+    /* Mais seguro que 80% */
+    padding: 12px;
+    font-size: 0.9rem;
+    /* Posição segura e robusta, sem números mágicos */
+    bottom: 20px;
+    /* Remove a posição 'right' e centraliza como fizemos antes */
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  .hero-section h1 {
+    font-size: 2.1rem;
+    /* Correto */
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    /* Correto */
+  }
+
+  /* --- Seções de Conteúdo --- */
+  .menu-section h1 {
+    font-size: 2.2rem;
+    color: var(--cor-secundaria);
+  }
+
+  /* * CORREÇÃO CRÍTICA:
+   * Nunca use larguras fixas (400px) maiores que o viewport (360px).
+   * Usamos 1fr ou 100% para ocupar o espaço disponível.
+   */
+  .destaques-section {
+    grid-template-columns: 1fr;
+    /* Correção: 400px -> 1fr */
+    justify-content: center;
+  }
+
+  .qualidade-historia {
+    /* Herda o 'grid-template-columns: 1fr' do breakpoint de 992px */
+    /* Apenas removemos a altura e largura fixas */
+    max-width: 100%;
+    height: auto;
+    /* Correção: 107vh -> auto */
+    gap: 20px;
+  }
+
+  /* Reseta o posicionamento do botão, já que o grid-pai mudou */
+  .botao {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+  }
+
+  .text-main h3 {
+    font-size: 1.3rem;
+  }
+
+  .text-main p {
+    font-size: 1rem;
+  }
+
+  /* --- Cardápio (Seu código aqui estava ótimo) --- */
+  .cardapio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-food {
+    width: 100%;
+    max-width: 300px;
+    /* Limite máximo é perfeito */
+    max-height: 400px;
+    margin: 0 auto;
+  }
+
+  .card-imagem {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-food img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .depoimento-card {
+    height: auto;
+    /* Correto */
+  }
+
+  /* --- Banner CTA --- */
+  .cta-banner {
+    margin: 3rem 0;
+  }
+
+  .cta-banner h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* --- Footer (Seu código estava quase todo bom) --- */
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-col.footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+
+  .footer-col.newsletter {
+    grid-column: 1 / -1;
+  }
+
+  /* Refinamento: Empilhar os links para leitura mais fácil */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    /* Correção: row -> column */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    margin-bottom: 0;
+    color: var(--cor-destaque);
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .footer-bottom .bottom-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
