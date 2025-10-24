@@ -46,8 +46,13 @@ function renderizarCarrinho() {
     const infoItem = document.createElement('p')
     const botaoAumentar = document.createElement('button')
     const botaoDiminuir = document.createElement('button')
-    botaoAumentar.textContent = '+'
-    botaoDiminuir.textContent = '-'
+    const quantidadeContainer = document.createElement('div')
+    const iconeAumentar = document.createElement('img')
+    iconeAumentar.src = 'img/plus-svgrepo-com.svg'
+    const iconeDiminuit = document.createElement('img')
+    iconeDiminuit.src = 'img/minus-svgrepo-com.svg'
+    quantidadeContainer.className = 'quantidade-container';
+
 
     botaoDiminuir.addEventListener('click', () => {
       removerUm(item.id)
@@ -61,12 +66,17 @@ function renderizarCarrinho() {
     const subtotal = item.preco * item.quantidade
     novoItem.textContent = `${item.nome} R$: ${subtotal.toFixed(2)}`
     infoItem.textContent = `${item.quantidade}`
-
+    
     novoItem.appendChild(infoItem)
     novoItem.appendChild(botaoDiminuir)
     novoItem.appendChild(botaoAumentar)
+    novoItem.appendChild(quantidadeContainer)
+    quantidadeContainer.appendChild(botaoDiminuir)
+    quantidadeContainer.appendChild(infoItem)
+    quantidadeContainer.appendChild(botaoAumentar)
     carrinhoLista.appendChild(novoItem)
-
+    botaoAumentar.appendChild(iconeAumentar)
+    botaoDiminuir.appendChild(iconeDiminuit)
     totalGeral += subtotal
   })
 
@@ -132,27 +142,59 @@ botaoAdicionar.forEach(botao => {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-  const btnVoltarAoTopo = document.getElementById('btnVoltarAoTopo')
+  const carrinhoVisivel = document.getElementById('aparecer-carrinho')
+  const btnVoltarAoTopo1 = document.getElementById('btnVoltarAoTopo')
 
   //define a altura do gatinho em 500px
   const gatinhoAltura = 500
-  
-  window.onscroll = function(){
-    controlarVisibilidade()
+  const Altura = 300
+
+function gerenciarScroll() {
+    // 1. Chama a lógica do botão Voltar ao Topo (controlarVisibilidade)
+    controlarVisibilidade(); 
+    
+    // 2. Chama a lógica do Carrinho (Visibilidade)
+    Visibilidade();
+}
+
+window.onscroll = gerenciarScroll;
+
+    function Visibilidade(){
+    if(document.body.scrollTop > Altura || document.documentElement.scrollTop > Altura){
+      carrinhoVisivel.classList.add('aparecer')
+    }else{
+      carrinhoVisivel.classList.remove('aparecer')
+    } 
   }
+  carrinhoVisivel.addEventListener('click', () =>{
+    carrinhoContainer.classList.toggle('ativo')
+  })
 
   function controlarVisibilidade(){
     if(document.body.scrollTop > gatinhoAltura || document.documentElement.scrollTop > gatinhoAltura){
-      btnVoltarAoTopo.classList.add('visivel')
+      btnVoltarAoTopo1.classList.add('visivel')
     }else{
-      btnVoltarAoTopo.classList.remove('visivel')
+      btnVoltarAoTopo1.classList.remove('visivel')
     }
   }
 
-  btnVoltarAoTopo.addEventListener("click", function(){
+  btnVoltarAoTopo1.addEventListener("click", function(){
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
   })
 })
+
+const iconeFinalizar = document.getElementById('finalizar-compra-btn')
+const iconeCarrinho = document.getElementById('carrinho-ico')
+
+iconeCarrinho.addEventListener('click', () =>{
+  carrinhoContainer.classList.toggle('ativo')
+})
+
+iconeFinalizar.addEventListener('click', () =>{
+  carrinhoContainer.classList.remove('ativo')
+})
+
+
