@@ -1,12 +1,12 @@
 
 
 let cardapio = [
-  { id: 1, nome: 'Baião de Dois', preco: 48.00, quantidade: 15 },
-  { id: 2, nome: 'Carne de Sol', preco: 35.00, quantidade: 10 },
-  { id: 3, nome: 'Acarajé', preco: 25.00, quantidade: 3 },
-  { id: 4, nome: 'Vatapá Cremoso', preco: 35.00, quantidade: 7 },
-  { id: 5, nome: 'Cuscuz Nordestino', preco: 50.00, quantidade: 5 },
-  { id: 6, nome: 'Camarão', preco: 25.00, quantidade: 23 }
+  { id: 1, nome: 'Baião de Dois', preco: 48.00, quantidade: 15, imagemUrl:'img/baiao.jpg' },
+  { id: 2, nome: 'Carne de Sol', preco: 35.00, quantidade: 10, imagemUrl: "img/carneDeSol.jpg"},
+  { id: 3, nome: 'Acarajé', preco: 25.00, quantidade: 3, imagemUrl: "img/acaraje.jpg"},
+  { id: 4, nome: 'Vatapá Cremoso', preco: 35.00, quantidade: 7, imagemUrl: "img/receita-de-vatapa.jpg"},
+  { id: 5, nome: 'Cuscuz Nordestino', preco: 50.00, quantidade: 5, imagemUrl:"img/cuscuz.jpeg"},
+  { id: 6, nome: 'Camarão', preco: 25.00, quantidade: 23, imagemUrl: "img/camarao.jpg" }
 ]
 
 let carrinho = []
@@ -47,11 +47,14 @@ function renderizarCarrinho() {
     const botaoAumentar = document.createElement('button')
     const botaoDiminuir = document.createElement('button')
     const quantidadeContainer = document.createElement('div')
+    const imagemMiniatura = document.createElement('img');
+        imagemMiniatura.src = item.imagemUrl;
+        imagemMiniatura.alt = `Miniatura de ${item.nome}`;
     const iconeAumentar = document.createElement('img')
-    iconeAumentar.src = 'img/plus-svgrepo-com.svg'
+      iconeAumentar.src = 'img/plus-svgrepo-com.svg'
     const iconeDiminuit = document.createElement('img')
-    iconeDiminuit.src = 'img/minus-svgrepo-com.svg'
-    quantidadeContainer.className = 'quantidade-container';
+      iconeDiminuit.src = 'img/minus-svgrepo-com.svg'
+      quantidadeContainer.className = 'quantidade-container';
 
 
     botaoDiminuir.addEventListener('click', () => {
@@ -68,6 +71,7 @@ function renderizarCarrinho() {
     infoItem.textContent = `${item.quantidade}`
     
     novoItem.appendChild(infoItem)
+    novoItem.appendChild(imagemMiniatura);
     novoItem.appendChild(botaoDiminuir)
     novoItem.appendChild(botaoAumentar)
     novoItem.appendChild(quantidadeContainer)
@@ -77,6 +81,7 @@ function renderizarCarrinho() {
     carrinhoLista.appendChild(novoItem)
     botaoAumentar.appendChild(iconeAumentar)
     botaoDiminuir.appendChild(iconeDiminuit)
+
     totalGeral += subtotal
   })
 
@@ -124,7 +129,7 @@ function adicionarAoCarrinho(idDoProduto) {
   if (itemNoCarrinho) {
     itemNoCarrinho.quantidade += 1
   } else {
-    const novoItem = {...cardapioCatalogo, quantidade: 1 }
+    const novoItem = {...cardapioCatalogo, quantidade: 1, imagemUrl: produtoCatalogo.imagemUrl }
     carrinho.push(novoItem)
   }
   salvarCarrinho()
