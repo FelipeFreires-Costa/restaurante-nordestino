@@ -8,7 +8,7 @@ Persistência de Dados: O carrinho mantém os itens (com suas quantidades) salvo
 
 Gerenciamento de Estado do Carrinho: Lógica robusta para adicionar novos itens ou incrementar a quantidade de itens existentes sem duplicar entradas.
 
-Manipulação Dinâmica do DOM: Criação de novos elementos HTML (<li>, <button>) e atualização do total em tempo real, sem recarregar a página.
+Manipulação Dinâmica do DOM: Criação de novos elementos HTML e atualização do total em tempo real, sem recarregar a página.
 
 Tratamento de Erros: Implementação de try...catch para lidar com requisições de API (embora o foco aqui seja o carrinho local, essa prática está pronta para ser usada).
 
