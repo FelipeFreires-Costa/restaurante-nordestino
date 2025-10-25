@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>Restaurante</title>
   </head>
   <body>
@@ -50,7 +51,7 @@
           <div class="qualidade-historia">
             <div class="item-img">
               <img
-                src="img/pexels-polina-kovaleva-5645034.jpg"
+                src="img/comida-nordestina.jpg"
                 alt="Foto dos ingredientes frescos do restaurante"
                 class="imagem-qualidade"
               />
@@ -264,6 +265,12 @@
 
     <section class="carrinho-section">
       <div class="container-carrinho" id="carrinho-container">
+        <div class="fechar-carrinho-container">
+        <button class="fechar-carrinho ativo" id="fechar-carrinho-btn">
+          X
+        </button>
+        </div>
+
         <h1>Seu carrinho</h1>
         <ul id="carrinho-lista" class="carrinho-lista">
           
@@ -348,14 +355,15 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
-
+    
     <button id="aparecer-carrinho" class="botao-aparecer">
       <img src="img/bag.svg" alt="">
     </button>
-
+    
     <button id="btnVoltarAoTopo" title="Voltar ao topo">
       <img src="img/arrow-up.svg" alt="">
     </button>
+    
+    <script src="script.js"></script>
   </body>
 </html>

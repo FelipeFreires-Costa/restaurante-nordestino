@@ -28,6 +28,7 @@ body {
   font-family: 'poppins';
   margin: auto;
   background-color: #F8F4EA;
+  max-width: 1900px;
 }
 
 .main-header {
@@ -35,18 +36,19 @@ body {
 }
 
 .container-bg {
-  background-image: url('img/comida-nordestina.jpg');
+  background-image: url('img/background.jpg');
   background-size: cover;
-  /* Garante que a imagem cubra toda a área */
   background-position: center;
-  /* Centraliza a imagem */
   background-repeat: no-repeat;
-  /* Impede que a imagem se repita */
   min-height: 80vh;
   display: grid;
   align-items: center;
   margin: 0;
   border-radius: 28px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .card-bg {
@@ -58,8 +60,8 @@ body {
   font-size: 1rem;
   padding: 15px;
   position: absolute;
-  right: 120px;
-  bottom: 130px;
+  right: 7%;
+  bottom: 15%;
   border: 1px solid rgba(255, 255, 255, 0.125);
   transition: 0.2s;
 }
@@ -113,7 +115,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 310px;
   height: 100%;
   background-color: rgb(255, 251, 243);
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
@@ -124,10 +126,32 @@ body {
   transform: translateX(100%);
   display: flex;
   flex-direction: column;
+  overflow: overlay;
   gap: 20px;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s; 
+  border-radius: 16px 0px 0px 16px;
 }
 
+.fechar-carrinho-container{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.fechar-carrinho.ativo{
+    width: 30px;
+    height: 30px;
+    z-index: 1999;
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius:6px;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .finalizar-compra{
   padding: 5px;
@@ -148,6 +172,11 @@ margin-top: auto;
   list-style: none;
   display: flex;
   flex-direction: column;
+}
+
+.carrinho-lista li{
+  font-size: 1.03rem;
+  font-weight: 600;
 }
 
 .quantidade-container{
@@ -281,7 +310,7 @@ margin-top: auto;
 
 .depoimentos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 20px;
   align-items: start;
   /* garante que os itens iniciem no topo */
@@ -808,7 +837,7 @@ margin-top: auto;
 }
 
 .botao-aparecer img{
-  width: 35px;
+  width: 32px;
 }
 
 .botao-aparecer.aparecer{
@@ -831,8 +860,8 @@ margin-top: auto;
   border: none;
   border-radius: 16px;
   /* Botão circular */
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
 
   /* Ícone centralizado */
   display: flex;
@@ -851,7 +880,7 @@ margin-top: auto;
 }
 
 #btnVoltarAoTopo img{
-  width: 35px;
+  width: 32px;
 }
 
 /* Classe que o JavaScript vai adicionar */

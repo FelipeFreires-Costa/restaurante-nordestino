@@ -1,12 +1,12 @@
 
 
 let cardapio = [
-  { id: 1, nome: 'Baião de Dois', preco: 48.00, quantidade: 15, imagemUrl:'img/baiao.jpg' },
-  { id: 2, nome: 'Carne de Sol', preco: 35.00, quantidade: 10, imagemUrl: "img/carneDeSol.jpg"},
-  { id: 3, nome: 'Acarajé', preco: 25.00, quantidade: 3, imagemUrl: "img/acaraje.jpg"},
-  { id: 4, nome: 'Vatapá Cremoso', preco: 35.00, quantidade: 7, imagemUrl: "img/receita-de-vatapa.jpg"},
-  { id: 5, nome: 'Cuscuz Nordestino', preco: 50.00, quantidade: 5, imagemUrl:"img/cuscuz.jpeg"},
-  { id: 6, nome: 'Camarão', preco: 25.00, quantidade: 23, imagemUrl: "img/camarao.jpg" }
+  { id: 1, nome: 'Baião de Dois', preco: 48.00, quantidade: 15},
+  { id: 2, nome: 'Carne de Sol', preco: 35.00, quantidade: 10},
+  { id: 3, nome: 'Acarajé', preco: 25.00, quantidade: 3},
+  { id: 4, nome: 'Vatapá Cremoso', preco: 35.00, quantidade: 7},
+  { id: 5, nome: 'Cuscuz Nordestino', preco: 50.00, quantidade: 5},
+  { id: 6, nome: 'Camarão', preco: 25.00, quantidade: 23}
 ]
 
 let carrinho = []
@@ -47,16 +47,14 @@ function renderizarCarrinho() {
     const botaoAumentar = document.createElement('button')
     const botaoDiminuir = document.createElement('button')
     const quantidadeContainer = document.createElement('div')
-    const imagemMiniatura = document.createElement('img');
-        imagemMiniatura.src = item.imagemUrl;
-        imagemMiniatura.alt = `Miniatura de ${item.nome}`;
     const iconeAumentar = document.createElement('img')
       iconeAumentar.src = 'img/plus-svgrepo-com.svg'
     const iconeDiminuit = document.createElement('img')
       iconeDiminuit.src = 'img/minus-svgrepo-com.svg'
       quantidadeContainer.className = 'quantidade-container';
-
-
+const infoQuantidade = document.createElement('span');
+      infoQuantidade.textContent = item.quantidade;
+    
     botaoDiminuir.addEventListener('click', () => {
       removerUm(item.id)
     })
@@ -71,17 +69,16 @@ function renderizarCarrinho() {
     infoItem.textContent = `${item.quantidade}`
     
     novoItem.appendChild(infoItem)
-    novoItem.appendChild(imagemMiniatura);
+    novoItem.appendChild(quantidadeContainer)
     novoItem.appendChild(botaoDiminuir)
     novoItem.appendChild(botaoAumentar)
-    novoItem.appendChild(quantidadeContainer)
     quantidadeContainer.appendChild(botaoDiminuir)
     quantidadeContainer.appendChild(infoItem)
     quantidadeContainer.appendChild(botaoAumentar)
-    carrinhoLista.appendChild(novoItem)
     botaoAumentar.appendChild(iconeAumentar)
     botaoDiminuir.appendChild(iconeDiminuit)
-
+    
+    carrinhoLista.appendChild(novoItem)
     totalGeral += subtotal
   })
 
@@ -129,7 +126,7 @@ function adicionarAoCarrinho(idDoProduto) {
   if (itemNoCarrinho) {
     itemNoCarrinho.quantidade += 1
   } else {
-    const novoItem = {...cardapioCatalogo, quantidade: 1, imagemUrl: produtoCatalogo.imagemUrl }
+    const novoItem = {...cardapioCatalogo, quantidade: 1} 
     carrinho.push(novoItem)
   }
   salvarCarrinho()
@@ -140,8 +137,8 @@ carregarCarrinho()
 
 botaoAdicionar.forEach(botao => {
   botao.addEventListener('click', (event) => {
-    const idDoProduto = parseInt(event.target.dataset.id)
-
+    const idDoProduto = parseInt(event.currentTarget.dataset.id, 10)
+    if (isNaN(idDoProduto)) return
     adicionarAoCarrinho(idDoProduto)
   })
 })
@@ -193,6 +190,11 @@ window.onscroll = gerenciarScroll;
 
 const iconeFinalizar = document.getElementById('finalizar-compra-btn')
 const iconeCarrinho = document.getElementById('carrinho-ico')
+const carrinhoFechar = document.getElementById('fechar-carrinho-btn')
+
+carrinhoFechar.addEventListener('click', () =>{
+  carrinhoContainer.classList.remove('ativo')
+})
 
 iconeCarrinho.addEventListener('click', () =>{
   carrinhoContainer.classList.toggle('ativo')
